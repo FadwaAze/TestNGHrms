@@ -1,38 +1,65 @@
 package com.hrms.testcases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
+import com.hrms.utils.Constants;
+import com.hrms.utils.ExcelUtility;
 
 public class AddEmployeeTest extends CommonMethods {
 
-//	@BeforeMethod
-//	public void openBrowserAndNavigate() {
-//		setUp();
-//		initialize();
-//	}
-//
-//	@AfterMethod
-//	public void quitBrowser() {
-//		tearDown();
-	
-//	}--> don't need because we add @BeforeMethode and @Aftermethod in our base class before setUp () Method and tearDown() Method
+	@Test(dataProvider = "userDataFromExcel", groups = { "homework", "addEmp", "regression" })
+	public void test(String firstName, String lastName, String username, String password) {
+		// System.out.println(firstName + " " + lastName + " " + username + " " +
+		// password);
 
-	public void addEmployeePage() {
-
-		//LoginpageElements login = new LoginpageElements();
-
-//		login.username.sendKeys(ConfigsReader.getProperty("username"));
-//		login.password.sendKeys(ConfigsReader.getProperty("password"));
-//		login.loginBtn.click(); --> will use instead login Methods from LoginpageElements
-		
+		// login into HRMS
 		login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
-         dashboard.navigateToAddEmployee();
-         wait(7);
-         
-         //sendText(addEmp.empFirstName, ConfigsReader.getProperty("employeeFirstName"));
-         
-		
 
+		// navigate to Add Employee page
+		dashboard.navigateToAddEmployee();
+		wait(1);
+
+		// add employee information
+		sendText(addEmp.firstName, firstName);
+		sendText(addEmp.lastName, lastName);
+		// get EmployeeID
+		String expectedEmpId = addEmp.employeeId.getAttribute("value");
+
+		// click on Create Login Details
+		click(addEmp.checkboxLoginDetails);
+		wait(1);
+		sendText(addEmp.username, username);
+		sendText(addEmp.password, password);
+		sendText(addEmp.confirmPassword, password);
+		wait(1);
+		jsClick(addEmp.saveBtn);
+		wait(1);
+
+		// validation
+		waitForVisibility(pDetails.lblPersonalDetails);
+		String actualEmpId = pDetails.employeeId.getAttribute("value");
+		AssertJUnit.assertEquals(actualEmpId, expectedEmpId, "Employee ID did not match!");
+
+		// take screenshot
+		takeScreenShot(firstName + "_" + lastName);
 	}
 
+	@DataProvider(name = "userData")
+	public Object[][] getData() {
+		Object[][] data = { { "Rajma", "Capoora", "raj123435345", "AmirKhan_@123" },
+				{ "John", "Smith", "john123", "AmirKhan_@123" }, { "Mary", "Ann", "mary123", "AmirKhan_@123" },
+				{ "Rohani", "Sakhi", "rohani123", "AmirKhan_@123" }, { "Ali", "Tarlaci", "ali123", "AmirKhan_@123" }, };
+		return data;
+	}
+
+	@DataProvider(name = "userDataFromExcel")
+	public Object[][] getData2() {
+		return ExcelUtility.excelIntoArray(Constants.REPORT_FILEPATH + "/src/test/resources/testdata/HrmsTestData.xlsx", "Employee");
+	}
 }

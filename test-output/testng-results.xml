@@ -1,97 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24742" started-at="2020-05-30T14:39:21 EDT" finished-at="2020-05-30T14:39:46 EDT">
+  <suite name="Default suite" duration-ms="61" started-at="2020-06-04T21:11:40 EDT" finished-at="2020-06-04T21:11:40 EDT">
     <groups>
-      <group name="regression">
-        <method signature="LoginTest.emptyUsernameLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="emptyUsernameLogin" class="com.hrms.testcases.LoginTest"/>
-        <method signature="LoginTest.invalidPasswordLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="invalidPasswordLogin" class="com.hrms.testcases.LoginTest"/>
-      </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="LoginTest.validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="validAdminLogin" class="com.hrms.testcases.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test name="Default test" duration-ms="24742" started-at="2020-05-30T14:39:21 EDT" finished-at="2020-05-30T14:39:46 EDT">
-      <class name="com.hrms.testcases.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="setUp" is-config="true" duration-ms="3891" started-at="2020-05-30T14:39:21 EDT" finished-at="2020-05-30T14:39:25 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="emptyUsernameLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="emptyUsernameLogin" duration-ms="460" started-at="2020-05-30T14:39:25 EDT" finished-at="2020-05-30T14:39:26 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyUsernameLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="tearDown" is-config="true" duration-ms="122" started-at="2020-05-30T14:39:26 EDT" finished-at="2020-05-30T14:39:26 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="setUp" is-config="true" duration-ms="3363" started-at="2020-05-30T14:39:26 EDT" finished-at="2020-05-30T14:39:29 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="invalidPasswordLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="invalidPasswordLogin" duration-ms="894" started-at="2020-05-30T14:39:29 EDT" finished-at="2020-05-30T14:39:30 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidPasswordLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="tearDown" is-config="true" duration-ms="162" started-at="2020-05-30T14:39:30 EDT" finished-at="2020-05-30T14:39:30 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="setUp" is-config="true" duration-ms="2765" started-at="2020-05-30T14:39:30 EDT" finished-at="2020-05-30T14:39:33 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="validAdminLogin" duration-ms="12903" started-at="2020-05-30T14:39:33 EDT" finished-at="2020-05-30T14:39:46 EDT">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+    <test name="Default test" duration-ms="61" started-at="2020-06-04T21:11:40 EDT" finished-at="2020-06-04T21:11:40 EDT">
+      <class name="com.hrms.testcases.DataProviderDemo">
+        <test-method status="FAIL" signature="addEmp(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hrms.testcases.DataProviderDemo@26aa12dd]" name="addEmp" duration-ms="0" started-at="2020-06-04T21:11:40 EDT" data-provider="getData" finished-at="2020-06-04T21:11:40 EDT">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#welcome"}
-  (Session info: chrome=83.0.4103.61)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Fadwas-MBP.fios-router.home', ip: 'fe80:0:0:0:49:77b8:ac5b:871a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: /var/folders/2j/rnmn0qqs0pv...}, goog:chromeOptions: {debuggerAddress: localhost:55592}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5882c18399ef8729bd6a1ac78394b39c
-*** Element info: {Using=id, value=welcome}]]>
+              <![CDATA[
+Method public void com.hrms.testcases.DataProviderDemo.addEmp(java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : getData]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#welcome"}
-  (Session info: chrome=83.0.4103.61)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Fadwas-MBP.fios-router.home', ip: 'fe80:0:0:0:49:77b8:ac5b:871a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: /var/folders/2j/rnmn0qqs0pv...}, goog:chromeOptions: {debuggerAddress: localhost:55592}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5882c18399ef8729bd6a1ac78394b39c
-*** Element info: {Using=id, value=welcome}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.getText(Unknown Source)
-at com.hrms.testcases.LoginTest.validAdminLogin(LoginTest.java:40)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+              <![CDATA[org.testng.TestNGException: 
+Method public void com.hrms.testcases.DataProviderDemo.addEmp(java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : getData
+at org.testng.internal.Parameters.findDataProvider(Parameters.java:563)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:776)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:744)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:783)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -113,15 +43,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validAdminLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hrms.testcases.LoginTest@4d95d2a2]" name="tearDown" is-config="true" duration-ms="114" started-at="2020-05-30T14:39:46 EDT" finished-at="2020-05-30T14:39:46 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.hrms.testcases.LoginTest -->
+        </test-method> <!-- addEmp -->
+      </class> <!-- com.hrms.testcases.DataProviderDemo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

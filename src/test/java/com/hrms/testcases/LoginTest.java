@@ -1,8 +1,7 @@
 package com.hrms.testcases;
 
-import org.testng.annotations.Test;
-
-import org.testng.annotations.Test;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,6 +27,9 @@ public class LoginTest extends CommonMethods {
 //testing functionality based on user stories that will be given to us
 	@Test (groups="smoke")
 	public void validAdminLogin() {
+		
+		test.info("Entering valid admin credentials");
+		
 		//LoginpageElements login = new LoginpageElements();
 		sendText(login.username, ConfigsReader.getProperty("username"));
 		sendText(login.password, ConfigsReader.getProperty("password"));
@@ -36,7 +38,8 @@ public class LoginTest extends CommonMethods {
     //--> for every test we need to add assertion to verify if the test pass or failed
 		//DashBoardPageElements dashboard = new DashBoardPageElements();
 		
-		String expectedUser="Welcome Admin";
+		test.info("verifying valid username shows with welcome text");
+		String expectedUser="Welcome";
 		String actualUser=dashboard.welcome.getText();
 		Assert.assertEquals(actualUser, expectedUser, "Admin is NOT Logged in");
 		//either first or the second assert to verify the login validation
@@ -46,6 +49,7 @@ public class LoginTest extends CommonMethods {
 	
 	@Test(groups="regression")
 	public void invalidPasswordLogin() {//negative login with wrong password
+		test.info("Entering invalid admin credentials");
 		//LoginpageElements login = new LoginpageElements();
 		sendText(login.username, ConfigsReader.getProperty("username"));
 		sendText(login.password,"bnvbcn");// pass on wrong password
@@ -58,8 +62,8 @@ public class LoginTest extends CommonMethods {
 	
 	@Test(groups="regression")
 	public void emptyUsernameLogin() {// negative login with empty username
+		test.info("Entering empty admin credentials");
 		//LoginpageElements login = new LoginpageElements();
-		
 		sendText(login.password, ConfigsReader.getProperty("password"));
 		click(login.loginBtn);
 		
@@ -69,6 +73,13 @@ public class LoginTest extends CommonMethods {
 	}
 	
 	
-	
+	@Test
+	public void timeStamp() {
+		Date d=new Date();
+		System.out.println(d.getTime());
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		System.out.println(sdf.format(d.getTime()));
+	}
+
 
 }
